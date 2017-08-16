@@ -11,11 +11,7 @@ pipeline {
         }
         stage('Check File 1') {
             steps {
-                if (fileExists('file1')) {
-                    echo 'File exists'
-                } else {
-                    echo 'File doesnt exists'
-                }
+                echo fileExists('file1')
                 echo "1: file1 checked"
             }
         }
@@ -27,11 +23,7 @@ pipeline {
         }
         stage('Check File 2') {
             steps {
-                if (fileExists('file1')) {
-                    echo 'File exists'
-                } else {
-                    echo 'File doesnt exists'
-                }
+                echo fileExists('file1')
                 echo "2: file1 checked"
             }
         }
