@@ -3,39 +3,37 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Create File') {
             steps {
-                pwd()
-                echo "build finished"
+                sh "touch file1"
+                echo "file1 created"
             }
         }
-        stage('Test') {
+        stage('Check File 1') {
             steps {
-                echo "test finished"
+                if (fileExists('file1')) {
+                    echo 'File exists'
+                } else {
+                    echo 'File doesn't exists'
+                }
+                echo "1: file1 checked"
             }
         }
-        stage('Deploy') {
+        stage('Remove File') {
             steps {
-                echo "test finished"
+                deleteDir()
+                echo "file1 removed"
             }
         }
-    }
-    post {
-        always {
-            echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
-        }
-        success {
-            echo 'I succeeeded!'
-        }
-        unstable {
-            echo 'I am unstable :/'
-        }
-        failure {
-            echo 'I failed :('
-        }
-        changed {
-            echo 'Things were different before...'
+        stage('Check File 2') {
+            steps {
+                if (fileExists('file1')) {
+                    echo 'File exists'
+                } else {
+                    echo 'File doesn't exists'
+                }
+                echo "2: file1 checked"
+            }
         }
     }
 }
