@@ -14,7 +14,7 @@ pipeline {
                 if (fileExists('file1')) {
                     echo 'File exists'
                 } else {
-                    echo 'File doesn't exists'
+                    echo 'File doesnt exists'
                 }
                 echo "1: file1 checked"
             }
@@ -30,7 +30,7 @@ pipeline {
                 if (fileExists('file1')) {
                     echo 'File exists'
                 } else {
-                    echo 'File doesn't exists'
+                    echo 'File doesnt exists'
                 }
                 echo "2: file1 checked"
             }
