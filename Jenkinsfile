@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('Create File') {
             steps {
+                pwd()
                 sh "touch file1"
                 echo "file1 created"
             }
