@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                pwd()
                 echo "build finished"
             }
         }
