@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Check File 1') {
             steps {
-                echo fileExists('file1')
+                echo fileExists('file11')
                 echo "1: file1 checked"
             }
         }
