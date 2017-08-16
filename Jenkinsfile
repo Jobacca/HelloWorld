@@ -10,11 +10,6 @@ pipeline {
                 echo "build finished"
             }
         }
-        stage('Test') {
-            steps {
-                echo "test finished"
-            }
-        }
     }
     post {
         always {
