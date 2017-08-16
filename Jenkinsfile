@@ -3,6 +3,12 @@
 pipeline {
     agent any
     stages {
+        stage('Check File 0') {
+            steps {
+                echo fileExists ('file1').toString()
+                echo "0: file1 checked"
+            }
+        }
         stage('Create File') {
             steps {
                 pwd()
@@ -24,7 +30,7 @@ pipeline {
         }
         stage('Check File 2') {
             steps {
-                echo fileExists('file1')
+                echo fileExists('file1').toString()
                 echo "2: file1 checked"
             }
         }
