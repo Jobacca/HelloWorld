@@ -30,12 +30,7 @@ pipeline {
         }
         stage('Check File 2') {
             steps {
-                if (fileExists('file1')) {
-                    echo 'Gibbet'
-                } else {
-                    echo 'Gibbet nischd'
-                }
-                //echo fileExists('file1').toString()
+                echo fileExists('file1').toString()
                 echo "2: file1 checked"
             }
         }
