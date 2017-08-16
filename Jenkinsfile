@@ -14,6 +14,11 @@ pipeline {
                 echo "test finished"
             }
         }
+        stage('Deploy') {
+            steps {
+                echo "test finished"
+            }
+        }
     }
     post {
         always {
